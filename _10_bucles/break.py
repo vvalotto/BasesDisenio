@@ -5,8 +5,8 @@ Created on 29/03/2013
 '''
 
 while True:
-    s =  (input('Ingresa una frase: '))
-    if s=='quit':
+    s =(input('Ingresa una frase: '))
+    if s == 'quit':
         break
     print ('Longitud de la cadena:', len(s))
 

@@ -1,2 +1,1 @@
-__author__ = 'voval'
-__project__ = ''
+print('inicio')

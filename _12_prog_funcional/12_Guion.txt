@@ -1,0 +1,113 @@
+Funcion de orden superior
+
+>>> #Funciones de orden superior
+>>> def sumar(x, y):
+...     return x + y
+...
+>>> def restar(x, y):
+...     return x - y
+...
+>>> def operacion(op, x, y):
+...     return op(x, y)
+...
+>>> operacion(sumar, x, y)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> x, y = 10, 5
+>>> operacion(sumar, x, y)
+15
+>>> operacion(restar, x, y)
+5
+>>> operaciones = [sumar, restar]
+>>> a, b = 200, 45
+>>> for o in operaciones:
+...     operacion(o, a, b)
+...
+245
+155
+>>> lista_resultado = [operacion(o, a, b) for o in operaciones]
+>>> lista_resultado
+[245, 155]
+
+----------------------
+Saludar
+
+----------------------
+>>> #funcion map
+>>> import math
+>>> lista = range(10)
+>>> map(math.sqrt,  lista)
+<map object at 0x1043cfcc0>
+>>> list(map(math.sqrt,  lista))
+[0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0, 2.23606797749979, 2.449489742783178, 2.6457513110645907, 2.8284271247461903, 3.0]
+>>> list(reduce(sumar, lista))
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'reduce' is not defined
+>>> def es_par(n):
+...     return (n % 2.0 == 0)
+...
+>>> filter(es_par, lista)
+<filter object at 0x104b49e48>
+>>> filter(es_par, lista)
+<filter object at 0x104b49940>
+>>> filtro = filter(es_par, lista)
+>>> type(filtro)
+<class 'filter'>
+>>> next(filtro)
+0
+>>> next(filtro)
+2
+>>> next(filtro)
+4
+>>> next(filtro)
+6
+>>> next(filtro)
+8
+>>> list(filtro)
+[]
+
+------- generadores
+>>> nombre = 'antropologia'
+adena):
+...     recorrida = cadena[::-1]
+...     i = 0
+...     while i <= len(recorrida):
+...         yield recorrida[i]
+...         i += 1
+...
+>>> def desde_el_fondo(cadena):
+...     recorrida = cadena[::-1]
+...     i = 0
+...     while i <= len(recorrida):
+...         yield recorrida[i]
+...         i += 1
+...
+>>> gen = desde_el_fondo(nombre)
+>>> next(gen)
+'a'
+>>> next(gen)
+'i'
+>>> next(gen)
+'g'
+>>> next(gen)
+'o'
+>>> next(gen)
+
+Una funcion en lugar de retornar un valor, se retorna un secuencia de resultados
+
+>>> res = [n ** 2 for n in range(4,80,4)]
+>>> res
+[16, 64, 144, 256, 400, 576, 784, 1024, 1296, 1600, 1936, 2304, 2704, 3136, 3600, 4096, 4624, 5184, 5776]
+
+>>> def otro_generador(nun, max, paso):
+...     while (num <= max):
+...         yield num
+...         num += paso
+...
+>>> mi_gen = otro_generador(10, 1000, 50)
+>>> next(mi_gen)
+>>> res = [n for n in otro_generador(1, 10, 3)]
+>>> res
+[1, 4, 7, 10]

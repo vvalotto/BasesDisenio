@@ -1,0 +1,37 @@
+>>> #Cadenas
+>>> cadena = 'Python'
+>>> cadena = 'Aprendamos algo de Python'
+>>> cadena
+'Aprendamos algo de Python'
+>>> cadena[0]
+'A'
+>>> cadena[10]
+' '
+>>> cadena[0:10]
+'Aprendamos'
+>>> cadena[:10]
+'Aprendamos'
+>>> cadena[10:]
+' algo de Python'
+>>>
+>>> cadena[:10:2]
+'Arnao'
+>>> cadena[::2]
+'Arnao lod yhn'
+>>> cadena[10:-1]
+' algo de Pytho'
+>>> cadena[10:-5]
+' algo de P'
+>>> cadena[-5:-5]
+''
+>>> cadena[-5:10]
+''
+>>> cadena[::-1]
+'nohtyP ed ogla somadnerpA'
+>>> cadena.capitalize()
+'Aprendamos algo de python'
+>>> cadena.split(' ')
+['Aprendamos', 'algo', 'de', 'Python']
+>>> dir(cadena)
+
+Cadenas Inmutables

@@ -1,0 +1,11 @@
+Crear mi modulo con variables
+a. sentencias
+b. funcionesc
+c. cargar modulo desde interprete de comandos
+d. modificar modulo y recargar
+e. modulo ejecutable y cargarlo
+f. modulo importado desde otro modulo
+g. paquete
+h. cargar paquete
+i. modulos in.-built
+
