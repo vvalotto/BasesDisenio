@@ -1,8 +1,3 @@
-'''
-Created on 29/03/2013
-
-@author: voval
-'''
 
 '''
 Funcion 3 - Parametros

@@ -1,0 +1,164 @@
+
+''' Funcion 1'''
+
+
+def holaPython():
+    print('Hola, soy Python')
+
+holaPython()
+holaPython()
+
+
+-----------
+
+'''
+Funcion 2
+Con Parametros
+'''
+
+
+def holaPython(nombre):
+    print('Hola, ' + nombre + ' soy Python.')
+
+nombre = (input('Decime tu nombre:'))
+holaPython(nombre)
+holaPython(nombre)
+
+
+------------
+
+
+'''
+Funcion 3 - Parametros
+'''
+
+def total(inicial=5, *numeros, **claves):
+    cuenta = inicial
+    print(cuenta)
+    for numero in numeros:
+        cuenta += numero
+    print(cuenta)
+    for clave in claves:
+        cuenta += claves[clave]
+        print(cuenta)
+    return cuenta
+
+print(total(10, 1, 2, 3, vegetales=50, frutas=100))
+
+_______________
+Doc
+
+def printMax(x, y):
+    '''Prints the maximum of two numbers.
+    The two values must be integers.'''
+
+    x = int(x) # convert to integers, if possible
+    y = int(y)
+    if x > y:
+        print(x, 'is maximum')
+    else:
+        print(y, 'is maximum')
+
+printMax(3, 5)
+print(printMax.__doc__)
+help(printMax)
+
+
+---------------
+
+def digo(mensaje, veces=1):
+    print(mensaje * veces)
+
+digo('Buenas Noches Americaaaaa')
+digo('Chau ', 4)
+
+---------------------
+
+def valor(precio, iva=21, retencion=10):
+    mi_monto = precio * ( 1 - iva/100)
+    mi_retencion = mi_monto * (retencion/100)
+    mi_factura = mi_monto - mi_retencion
+
+    print('Me pagan: {0:5.2f}'.format(mi_factura))
+    print('Me retienen: ', mi_retencion)
+    print('Precio: ', precio, 'IVA: ', iva, 'Retencion:', retencion)
+
+valor(100)
+valor(100,retencion=12)
+valor(iva=10.5, precio=200)
+
+----------------------
+
+x = 50
+
+def func(x):
+    print('x es ', x)
+    x = 2
+    print('Ahora x es : ', x)
+
+func(x)
+print('x sigue siendo : ', x )
+
+----------------------
+Variable Global
+
+
+x = 50
+
+def func():
+    global x
+    print('x es ', x)
+    x = 2
+    print('Ahora x es : ', x)
+
+func()
+print('x sigue siendo : ', x )
+
+--------------------------
+Variable No-local
+def func_externa():
+    x = 2
+    print('x es : ', x)
+
+    def func_interna():
+        nonlocal x
+        x = 5
+
+    func_interna()
+    print('x vale ahora: ', x)
+
+func_externa()
+
+------------------------
+Primos
+
+
+def ListarPrimos(minimo, maximo):
+    for n in range(minimo, maximo):
+        for x in range(minimo, n):
+            if n % x == 0:
+                print(n, ' es igual a ', x, '*' ,n//x)
+                break
+        else:
+            print(n, ' Es un número primo')
+
+def EsPrimo(numero):
+    resultado = True
+    for n in range(2, numero):
+        if numero % n == 0:
+            resultado = False
+            break
+
+    return resultado
+
+ ----------------------
+ Demo Funciones
+
+ import primos
+
+primos.ListarPrimos(2, 150)
+
+
+num=193
+print(num, ' es primo' if primos.EsPrimo(num) else 'no es primo')
+

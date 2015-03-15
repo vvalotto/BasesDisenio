@@ -1,8 +1,4 @@
-'''
-Created on 29/03/2013
 
-@author: voval
-'''
 
 def valor(precio, iva=21, retencion=10):
     mi_monto = precio * ( 1 - iva/100)
